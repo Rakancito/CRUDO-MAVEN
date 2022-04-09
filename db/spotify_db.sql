@@ -53,10 +53,10 @@ CREATE TABLE `suscriptor` (
 -- ----------------------------
 -- Records of suscriptor
 -- ----------------------------
-INSERT INTO `suscriptor` VALUES ('4', 'Roberto', 'Cortes', 'Gil', 'asdad', '2022-02-16', '1', '0');
-INSERT INTO `suscriptor` VALUES ('5', 'Roberto1', 'Gil', 'Cortes', 'Cortes', '2022-02-17', '0', '0');
-INSERT INTO `suscriptor` VALUES ('6', 'Roberto2', 'Gil', 'Cortes', 'asd', '2022-02-17', '0', '0');
-INSERT INTO `suscriptor` VALUES ('7', 'Roberto3', 'Gil', 'Cortes', 'asd', '2022-02-17', '2', '1');
+INSERT INTO `suscriptor` VALUES ('4', 'Roberto', 'Cortes', 'asd', 'asdad', '2022-02-16', '1', '0');
+INSERT INTO `suscriptor` VALUES ('5', 'Roberto1', 'asda', 'Cortes', 'Cortes', '2022-02-17', '0', '0');
+INSERT INTO `suscriptor` VALUES ('6', 'Roberto2', 'asdasd', 'Cortes', 'asd', '2022-02-17', '0', '0');
+INSERT INTO `suscriptor` VALUES ('7', 'Roberto3', 'asda', 'Cortes', 'asd', '2022-02-17', '2', '1');
 INSERT INTO `suscriptor` VALUES ('8', 'asda', 'asdasd', 'asd', 'asdad', '2022-02-17', '2', '0');
 INSERT INTO `suscriptor` VALUES ('9', 'asda22321', 'asdasd', 'asd', 'asdad', '2022-02-17', '2', '0');
 INSERT INTO `suscriptor` VALUES ('10', 'asda22321', 'asdasd523', 'asd34', 'asdad223', '2022-02-17', '1', '0');
