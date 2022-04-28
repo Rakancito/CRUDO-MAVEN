@@ -41,6 +41,13 @@
 				<th><a class="link-light" href="suscriptor?opcion=eliminar">Eliminar un Suscriptor</a></th>
 			</tr>
 		</table>
+		<table border="1" class="table table-bordered table-dark">
+			<tr>
+				<th><a class="link-light" href="suscriptor?opcion=reportefecha"> Reporte por Fecha de Suscripción</a></th>
+				<th><a class="link-light" href="suscriptor?opcion=reportetipo">Reporte por Tipo de Suscripción</a></th>
+				<th><a class="link-light" href="suscriptor?opcion=reportestatus">Reporte por Status de Suscripción</a></th>
+			</tr>
+		</table>
 	</div>
 
 	<div class="container">

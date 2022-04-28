@@ -11,9 +11,10 @@ public class suscriptor {
     private String Date;
     private int iPlan;
     private int iStatus;
+    private String DateRegistro;
     
     public suscriptor(int id, String sName, String sLastName, String sSecondLastName, String sService,
-			String date, int iPlan, int iStatus) {
+			String date, int iPlan, int iStatus, String DateRegistro) {
 		super();
 		this.id = id;
 		this.sName = sName;
@@ -23,6 +24,7 @@ public class suscriptor {
 		this.Date = date;
 		this.iPlan = iPlan;
 		this.iStatus = iStatus;
+		this.DateRegistro = DateRegistro;
 	}
     
     public suscriptor() {
@@ -93,11 +95,19 @@ public class suscriptor {
 		this.iStatus = iStatus;
 	}
 
+	public String getDateRegistro() {
+		return DateRegistro;
+	}
+
+	public void setDateRegistro(String date) {
+		this.DateRegistro = date;
+	}
+	
 	@Override
 	public String toString() {
 		return "suscriptor [id=" + id + ", sName=" + sName + ", sLastName=" + sLastName + ", sSecondLastName="
 				+ sSecondLastName + ", sService=" + sService + ", Date=" + Date + ", iPlan=" + iPlan + ", iStatus="
-				+ iStatus + "]";
+				+ iStatus + "DateRegistro=" + DateRegistro + "]";
 	}
     
     

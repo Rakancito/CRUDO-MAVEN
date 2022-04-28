@@ -44,6 +44,52 @@ public class SuscriptorController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String opcion = request.getParameter("opcion");
+		
+		if (opcion.equals("reportetipo"))
+		{
+			try	{
+				List<suscriptor> listaSuscriptores = null;
+				listaSuscriptores = SuscriptorDAO.obtenerSuscriptoresByTipo();
+				request.setAttribute("ListaSuscriptores", listaSuscriptores);
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			RequestDispatcher requestDispatcher= request.getRequestDispatcher("ReporteTipo.jsp");
+			requestDispatcher.forward(request, response);
+			return;			
+		}
+		else if (opcion.equals("reportestatus"))
+		{
+			try	{
+				List<suscriptor> listaSuscriptores = null;
+				listaSuscriptores = SuscriptorDAO.obtenerSuscriptoresByStatus();
+				request.setAttribute("ListaSuscriptores", listaSuscriptores);
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			RequestDispatcher requestDispatcher= request.getRequestDispatcher("ReporteStatus.jsp");
+			requestDispatcher.forward(request, response);
+			return;					
+		}
+		else if (opcion.equals("reportefecha"))
+		{
+			try	{
+				List<suscriptor> listaSuscriptores = null;
+				listaSuscriptores = SuscriptorDAO.obtenerSuscriptoresByFecha();
+				request.setAttribute("ListaSuscriptores", listaSuscriptores);
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			RequestDispatcher requestDispatcher= request.getRequestDispatcher("ReporteFecha.jsp");
+			requestDispatcher.forward(request, response);
+			return;					
+		}	
 		if (opcion.equals("crear")) {
 			request.setAttribute("opcion", 1);
 		} else if (opcion.equals("eliminar")) {
