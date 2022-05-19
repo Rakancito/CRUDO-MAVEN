@@ -218,7 +218,6 @@ public class SuscriptorDAO {
 		ResultSet resultSet = null;
 		List<suscriptor> listaProductos = new ArrayList<suscriptor>();
 		
-
 		String sql = null;
 		estadoOperacion = false;
 		connection = obtenerConexion();

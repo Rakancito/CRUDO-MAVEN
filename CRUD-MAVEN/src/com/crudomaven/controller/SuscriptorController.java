@@ -44,11 +44,10 @@ public class SuscriptorController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String opcion = request.getParameter("opcion");
-		
+		List<suscriptor> listaSuscriptores = null;
 		if (opcion.equals("reportetipo"))
 		{
 			try	{
-				List<suscriptor> listaSuscriptores = null;
 				listaSuscriptores = SuscriptorDAO.obtenerSuscriptoresByTipo();
 				request.setAttribute("ListaSuscriptores", listaSuscriptores);
 
@@ -63,7 +62,6 @@ public class SuscriptorController extends HttpServlet {
 		else if (opcion.equals("reportestatus"))
 		{
 			try	{
-				List<suscriptor> listaSuscriptores = null;
 				listaSuscriptores = SuscriptorDAO.obtenerSuscriptoresByStatus();
 				request.setAttribute("ListaSuscriptores", listaSuscriptores);
 
@@ -78,7 +76,6 @@ public class SuscriptorController extends HttpServlet {
 		else if (opcion.equals("reportefecha"))
 		{
 			try	{
-				List<suscriptor> listaSuscriptores = null;
 				listaSuscriptores = SuscriptorDAO.obtenerSuscriptoresByFecha();
 				request.setAttribute("ListaSuscriptores", listaSuscriptores);
 
@@ -105,7 +102,6 @@ public class SuscriptorController extends HttpServlet {
 			return;
 		}
 		try	{
-			List<suscriptor> listaSuscriptores = null;
 			listaSuscriptores = SuscriptorDAO.obtenerSuscriptores();
 			request.setAttribute("ListaSuscriptores", listaSuscriptores);
 
@@ -115,7 +111,6 @@ public class SuscriptorController extends HttpServlet {
 
 		RequestDispatcher requestDispatcher= request.getRequestDispatcher("Index.jsp");
 		requestDispatcher.forward(request, response);			
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -124,11 +119,9 @@ public class SuscriptorController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String opcion = request.getParameter("opcion");
+		suscriptor suscriptor = new suscriptor();
 		if (opcion.equals("crear")) {
-			
-			
-			suscriptor suscriptor = new suscriptor();
-			
+	
 			suscriptor.setsName(request.getParameter("nombre"));
 			suscriptor.setsLastName(request.getParameter("ap_paterno"));
 			suscriptor.setsSecondLastName(request.getParameter("ap_materno"));
@@ -157,7 +150,6 @@ public class SuscriptorController extends HttpServlet {
 			}			
 		}
 		else if (opcion.equals("modificar")) {
-			suscriptor suscriptor = new suscriptor();
 			
 			suscriptor.setId(Integer.parseInt(request.getParameter("id")));
 			suscriptor.setsName(request.getParameter("nombre"));
@@ -183,7 +175,6 @@ public class SuscriptorController extends HttpServlet {
 				suscriptor dataSuscriptor = new suscriptor();
 				dataSuscriptor = SuscriptorDAO.obtenerSuscriptor(idSuscriptor);
 				request.setAttribute("dataSuscriptor", dataSuscriptor);
-				//request.setAttribute("accion", 1);
 			} catch (SQLException e) {
 				request.setAttribute("accion", 2);
 				e.printStackTrace();
